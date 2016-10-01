@@ -174,3 +174,26 @@ header .nav.navbar-nav li a {
     padding-bottom: 0;
     padding-top: 30px;
 }
+
+// footer
+
+footer .nav > li > a {
+    color: white;
+    font-weight: bold;
+}
+
+footer .nav > li > a:hover {
+    background-color: transparent;
+}
+
+footer {
+    display: inline-block;
+    width: 100%;
+    background-color: #7a4501;
+    padding: 18px;
+    color: white;
+}
+
+.thumb a img {
+    width: 35px;
+}
