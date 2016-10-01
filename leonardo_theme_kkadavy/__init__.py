@@ -7,5 +7,4 @@ LEONARDO_CSS_FILES = [
 ]
 
 LEONARDO_JS_FILES = [
-    'js/kkadavy.js'
 ]

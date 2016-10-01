@@ -18,6 +18,15 @@
     {% include "horizon/_messages.html" %}
     {% if feincms_page.layout == "fixed" %}
     {% if request.path == '/' %}
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#nav').affix({
+              offset: {
+                top: $('header').height()
+              }
+        });
+      });
+    </script>
     <header>
       <div class="intro-body">
         <div class="container">  
