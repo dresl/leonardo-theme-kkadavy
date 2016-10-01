@@ -17,7 +17,7 @@
     {% analytical_body_top %}
     {% include "horizon/_messages.html" %}
     {% if feincms_page.layout == "fixed" %}
-
+    {% if request.path == '/' %}
     <header>
       <div class="intro-body">
         <div class="container">  
@@ -25,6 +25,7 @@
         </div>
       </div>
     </header>
+    {% endif %}
     <div id="nav">
       <div class="navbar navbar-static-top">
         <div class="container">
