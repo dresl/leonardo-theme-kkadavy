@@ -1,0 +1,11 @@
+{% extends widget.get_base_template %}
+{% load staticfiles %}
+
+{% block content %}
+
+<a href="/">
+<img class="toolbar-image" src="{% static 'img/logo_bila_final.png' %}">
+</a><br>
+<h1 class="toolbar-heading">{{ widget.site_title }}</h1>
+{{ widget.tagline }}
+{% endblock %}

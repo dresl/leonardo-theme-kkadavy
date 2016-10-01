@@ -16,31 +16,32 @@
     </noscript>
     {% analytical_body_top %}
     {% include "horizon/_messages.html" %}
-    {% if feincms_page.layout == "boxed" %}
-    <div class="container toolbar-background">
-      {% feincms_render_region feincms_page "toolbar" request %}
+    {% if feincms_page.layout == "fixed" %}
+
+    <header>
+      <div class="intro-body">
+        <div class="container">  
+        {% feincms_render_region feincms_page "toolbar" request %}
+        </div>
+      </div>
+    </header>
+    <div id="nav">
+      <div class="navbar navbar-static-top">
+        <div class="container">
+          {% feincms_render_region feincms_page "header" request %}
+        </div>
+      </div><!-- /.navbar -->
     </div>
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-        {% feincms_render_region feincms_page "header" request %}
-    </nav>
-    <div class="container bg-mknachod">
-      <div class="col-xs-12 col-md-3" style="padding: 0">
+    <div class="container">
+      <!-- <div class="col-xs-12 col-md-3" style="padding: 0">
         {% feincms_render_region feincms_page "col1" request %}
         {% render_region_tools feincms_page "col1" request %}
-      </div>
-      <div class="col-xs-12 col-md-9" style="padding: 0">
+      </div> -->
+      <div class="col-xs-12" style="padding: 0">
       {% feincms_render_region feincms_page "col3" request %}
       {% render_region_tools feincms_page "col3" request %}
       </div>
     </div>
-    {% if request.path == '/' %}
-    <div class="container bg-mknachod">
-      <div class="col-xs-12">
-        {% feincms_render_region feincms_page "col2" request %}
-        {% render_region_tools feincms_page "col2" request %}
-      </div>
-    </div>
-    {% endif %}
     {% else %}
     <section class="container content-section text-center">
       <div class="{{ feincms_page.get_layout_class }}">
