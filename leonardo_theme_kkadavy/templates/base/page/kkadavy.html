@@ -16,9 +16,9 @@
     </noscript>
     {% analytical_body_top %}
     {% include "horizon/_messages.html" %}
-    {% if feincms_page.layout == "fixed" %}
+    {% if feincms_page.layout == "fixed" or feincms_page.layout == "fluid" %}
     {% if request.path == '/' %}
-    <header>
+    <header id="header">
       <div class="intro-body">
         <div class="container">  
         {% feincms_render_region feincms_page "toolbar" request %}
@@ -33,7 +33,7 @@
         </div>
       </div><!-- /.navbar -->
     </div>
-    <div class="container">
+    <div class="container{% if feincms_page.layout == 'fluid' %}-fluid{% endif %}">
       <!-- <div class="col-xs-12 col-md-3" style="padding: 0">
         {% feincms_render_region feincms_page "col1" request %}
         {% render_region_tools feincms_page "col1" request %}

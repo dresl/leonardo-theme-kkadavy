@@ -19,6 +19,14 @@ a:hover, a:focus {
     text-decoration: none;
 }
 
+.container-fluid {
+    padding-right: 0;
+}
+
+ul.nav.nav-pills {
+    display: inline-block;
+}
+
 header {
     display: table;
     width: 100%;
@@ -49,6 +57,10 @@ header {
     font-size: 42px;
     font-weight: bold;
     color: #f7c247;
+}
+
+header .pageiconlink-content-default {
+    padding-top: 45px;
 }
 
 // nav
