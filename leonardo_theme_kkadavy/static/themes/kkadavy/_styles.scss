@@ -23,10 +23,6 @@ a:hover, a:focus {
     padding-right: 0;
 }
 
-ul.nav.nav-pills {
-    display: inline-block;
-}
-
 header {
     display: table;
     width: 100%;
@@ -114,6 +110,17 @@ header .pageiconlink-content-default {
     &.in {
         background-color: rgba(122, 69, 1, 0.9);
     }
+}
+
+// nav pills
+
+ul.nav.nav-pills {
+    display: inline-block;
+}
+
+.template-pills.treenavigation-content-pills .nav-pills li a {
+    color: white;
+    border-radius: 0;
 }
 
 // dropdown menu
