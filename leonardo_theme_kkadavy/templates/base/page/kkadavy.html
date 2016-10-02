@@ -18,15 +18,6 @@
     {% include "horizon/_messages.html" %}
     {% if feincms_page.layout == "fixed" %}
     {% if request.path == '/' %}
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('#nav').affix({
-              offset: {
-                top: $('header').height()
-              }
-        });
-      });
-    </script>
     <header>
       <div class="intro-body">
         <div class="container">  
@@ -35,7 +26,7 @@
       </div>
     </header>
     {% endif %}
-    <div id="nav">
+    <div {% if request.path == '/' %}id="nav"{% endif %}>
       <div class="navbar navbar-static-top">
         <div class="container">
           {% feincms_render_region feincms_page "header" request %}
