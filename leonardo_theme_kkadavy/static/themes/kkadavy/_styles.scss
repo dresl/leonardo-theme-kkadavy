@@ -31,6 +31,10 @@ header {
     text-align: center;
 }
 
+.fullSection {
+    padding-top: 100px;
+}
+
 .intro-body {
     display: table-cell;
     vertical-align: middle;
@@ -214,14 +218,18 @@ header .pageiconlink-content-default {
 
 // header nav
 
+header .pageiconlink-base-default {
+    display: none;
+}
+
 /* smartphones */
 @media only screen and (max-width: 760px) {
     header {
-        .nav.navbar-nav {
-            display: none;
+        .pageiconlink-base-default {
+            display: block;
         }
-        .navbar-collapse.collapse {
-            display: none;
+        .toolbar-image {
+            width: 80%;
         }
     }
 }
