@@ -81,9 +81,9 @@ header .pageiconlink-content-default {
         margin-bottom: -5px;
         > li > a {
             color: #fff;
-            margin-top: 0px;
+            margin-top: 10px;
             font-weight: bold;
-            padding: 27.5px 40px;
+            padding: 21.5px 40px;
             &:hover {
                 background-color: #ecb533;
             }
@@ -161,7 +161,10 @@ header .pageiconlink-content-default {
 // dropdown menu
 
 .navbar-nav > li {
-    margin-top: -1px;
+    > a:focus {
+        background-color: transparent;
+        outline: none;
+    }
     > .dropdown-menu {
         text-align: center;
         position: absolute;
