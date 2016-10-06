@@ -225,6 +225,12 @@ header .pageiconlink-base-default {
 /* smartphones */
 @media only screen and (max-width: 760px) {
     header {
+        .treenavigation-content-kkadavy_menu {
+            display: none;
+            .navbar-collapse.collapse {
+                display: none;
+            }
+        }
         .pageiconlink-base-default {
             display: block;
         }
