@@ -1,0 +1,20 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+{% block items %}
+{% for row in widget.get_rows %}
+    <div class="grid">
+        {% for item in row %}
+        <figure class="effect-lily" onclick="location.href = '{{ item.web_address }}';">
+            {% include "widget/linkmenu/_kkadavy.html" with link=item %}
+            <figcaption>
+                <div>
+                    <h2><span>{{ item.translation.name }}</span> knedlíky</h2>
+                </div>
+            </figcaption>           
+        </figure>
+        {% endfor %}
+    </div>
+{% endfor %}
+{% endblock %}
+{% endblock %}

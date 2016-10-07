@@ -1,0 +1,50 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+{% block items %}
+{% for row in widget.get_rows %}
+    <div class="component">
+        <ul class="align">
+            {% for item in row %}
+            <li>
+                <figure class='book'>
+
+                <!-- Front -->
+
+                    <ul class='hardcover_front'>
+                        <li>
+                            {% include "widget/linkmenu/_kkadavy.html" with link=item %}
+                        </li>
+                        <li></li>
+                    </ul>
+
+                <!-- Pages -->
+
+                    <ul class='page'>
+                        <li></li>
+                        <li>
+                            <a class="btn" href="#">{{ item.translation.name }}</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+
+                <!-- Back -->
+
+                    <ul class='hardcover_back'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <ul class='book_spine'>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </figure>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
+{% endblock %}
+{% endblock %}
