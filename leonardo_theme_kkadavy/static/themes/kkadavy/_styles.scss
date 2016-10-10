@@ -47,7 +47,7 @@ header {
 }
 
 .menu-logo {
-    width: 49%;
+    width: 124px;
     margin-top: 3px;
 }
 
@@ -113,6 +113,7 @@ header .pageiconlink-content-default {
     text-align: center;
     &.in {
         background-color: rgba(122, 69, 1, 0.9);
+        padding-bottom: 20px;
     }
 }
 
@@ -244,10 +245,17 @@ header .pageiconlink-base-default {
     .treenavigation-content-kkadavy_menu .col-xs-12 {
         padding-bottom: 15px;
     }
-    .menu-logo {
-        width: 210%;
+    .responsive_menu.container-fluid {
+        .treenavigation-base-default {
+            margin-top: -60px;
+            padding: 0;
+        }
+        .siteheading-base-default {
+            z-index: 50;
+        }
     }
 }
+
 
 .navbar-collapse.collapse.in ul li a {
     padding: 16px;
