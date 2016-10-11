@@ -1,0 +1,31 @@
+{% extends widget.get_base_template %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  {{ widget.form.title }}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{ widget.form.title }}</h4>
+      </div>
+      <div class="modal-body">
+        <div id="form{{ widget.id }}" class="{{ widget.formclass }}">
+        {% if form %}
+        {% crispy form %}
+        {% else %}
+        {{ message|safe }}
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
