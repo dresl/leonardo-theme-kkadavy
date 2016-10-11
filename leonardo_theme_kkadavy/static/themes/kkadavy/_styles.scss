@@ -230,6 +230,10 @@ header .pageiconlink-base-default {
     display: none;
 }
 
+.responsive_menu {
+    @extend .container;
+}
+
 /* smartphones */
 @media only screen and (max-width: 760px) {
     header {
@@ -249,6 +253,11 @@ header .pageiconlink-base-default {
     .treenavigation-content-kkadavy_menu .col-xs-12 {
         padding-bottom: 15px;
     }
+
+    .responsive_menu {
+        @extend .container-fluid;
+    }
+
     .responsive_menu.container-fluid {
         .treenavigation-base-default {
             margin-top: -60px;
