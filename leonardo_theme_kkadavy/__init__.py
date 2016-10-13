@@ -4,12 +4,12 @@ LEONARDO_APPS = [
 ]
 
 LEONARDO_CSS_FILES = [
-    'css/normalize.css',
     'css/set1.css',
-    'css/book.css',
+    'css/magazine.css',
 ]
 
 LEONARDO_JS_FILES = [
     'js/kkadavy.js',
-    'js/modernizr.custom.js',
+    'js/modernizr.2.5.3.min.js',
+    'js/hash.js',
 ]
