@@ -27,11 +27,11 @@
             {% for item in row %}
                 {% if not item.ordering|divisibleby:2 %}
                 <img width="76" height="100" class="page-{{ item.ordering }}" src="{{ item.image.url }}">
-                <span>{{ item.ordering }}</span></li>
+                <span style="margin-left: {% if item.ordering != 1 %}10px{% endif %}">{{ item.ordering }}</span></li>
                 <li>
                 {% else %}
                 <img width="76" height="100" class="page-{{ item.ordering }}" src="{{ item.image.url }}">
-                <span>{{ item.ordering }}</span>
+                <span style="{% if not forloop.last %}margin-left: -7px{% endif%}">{{ item.ordering }}{% if item.ordering != 1 and not forloop.last %} - {% endif %}</span>
                 {% endif %}
             {% endfor %}
             </li>
@@ -41,6 +41,20 @@
 </div>
 
 <script type="text/javascript">
+
+// Load regions
+
+function loadRegions(page, element) {
+
+    $.getJSON('pages/'+page+'-regions.json').
+        done(function(data) {
+
+            $.each(data, function(key, region) {
+                addRegion(region, element);
+            });
+        });
+}
+
 
 function loadApp() {
 
