@@ -29,7 +29,7 @@
                 setInterval(function(){
                     var pageimg = document.getElementById("img"+"{{ item.ordering }}");
                     pageimg.src="{{ item.image.url }}";
-                }, 1000);
+                }, 500);
                 </script>
                 {% if not item.ordering|divisibleby:2 %}
                 <img width="76" height="100" class="page-{{ item.ordering }} page-{{ item.id }}" src="{{ item.image.url }}">
@@ -75,7 +75,7 @@ function loadPage(page, pageElement) {
 
     // Load the page
 
-    img.attr('src', "{% static 'img/spokojeny_zakaznik.png' %}");
+    img.attr('src', "{% static 'img/loading_icon.gif' %}");
 
     loadRegions(page, pageElement);
 
