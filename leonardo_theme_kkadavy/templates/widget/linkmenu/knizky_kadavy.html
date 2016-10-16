@@ -26,88 +26,10 @@
             <li class="{% if forloop.first or forloop.last %}i{% else %}d{% endif %}">
             {% for item in row %}
                 <script type="text/javascript">
-                    function loadPage(page, pageElement) {
-                        var img = $('<img />', {'class': 'img-{{ item.id }}'});
-                        img.mousedown(function(e) {
-                            e.preventDefault();
-                        });
-
-                        img.load(function() {
-                            
-                            // Set the size
-                            $(this).css({width: '100%', height: '100%'});
-
-                            // Add the image to the page after loaded
-
-                            $(this).appendTo(pageElement);
-
-                            // Remove the loader indicator
-                            
-                            pageElement.find('.loader-{{ item.id }}').remove();
-                        });
-
-                        // Load the page
-
-                        img.attr('src', '{{ item.image.url }}');
-
-                        loadRegions(page, pageElement);
-
-                    }
-                    // Load large page
-
-                    function loadLargePage(page, pageElement) {
-                        
-                        var img = $('<img />', {'class': 'img-{{ item.id }}'});
-
-                        img.load(function() {
-
-                            var prevImg = pageElement.find('img');
-                            $(this).css({width: '100%', height: '100%'});
-                            $(this).appendTo(pageElement);
-                            prevImg.remove();
-                            
-                        });
-
-                        // Loadnew page
-                        
-                        img.attr('src', '{{ item.image.url }}');
-                    }
-
-                    // Load small page
-
-                    function loadSmallPage(page, pageElement) {
-                        
-                        var img = pageElement.find('img.page{{ item.id }}');
-
-                        img.css({width: '100%', height: '100%'});
-
-                        img.unbind('load');
-                        // Loadnew page
-
-                        img.attr('src', '{{ item.image.url }}');
-                    }
-
-                    // Add page
-
-                    function addPage(page, book) {
-
-                        var id, pages = book.turn('pages');
-
-                        // Create a new element for this page
-                        var element = $('<div />', {'class': 'createpage-{{ item.id }}'});
-
-                        // Add the page to the flipbook
-                        if (book.turn('addPage', element, page)) {
-
-                            // Add the initial HTML
-                            // It will contain a loader indicator and a gradient
-                            element.html('<div class="gradient"></div><div class="loader-{{ item.id }}"></div>');
-
-                            // Load the page
-                            loadPage(page, element);
-                        }
-
-                    }
+                setInterval(function(){
+                    var pageimg = document.getElementById("img"+"{{ item.ordering }}");
+                    pageimg.src="{{ item.image.url }}";
+                }, 1000);
                 </script>
                 {% if not item.ordering|divisibleby:2 %}
                 <img width="76" height="100" class="page-{{ item.ordering }} page-{{ item.id }}" src="{{ item.image.url }}">
@@ -125,18 +47,38 @@
 </div>
 
 <script type="text/javascript">
+// Load Page
 
-// Load regions
+function loadPage(page, pageElement) {
 
-function loadRegions(page, element) {
+    // Create an image element
 
-    $.getJSON('pages/'+page+'-regions.json').
-        done(function(data) {
+    var img = $('<img />', {'id': 'img'+page});
 
-            $.each(data, function(key, region) {
-                addRegion(region, element);
-            });
-        });
+    img.mousedown(function(e) {
+        e.preventDefault();
+    });
+
+    img.load(function() {
+        
+        // Set the size
+        $(this).css({width: '100%', height: '100%'});
+
+        // Add the image to the page after loaded
+
+        $(this).appendTo(pageElement);
+
+        // Remove the loader indicator
+        
+        pageElement.find('.loader').remove();
+    });
+
+    // Load the page
+
+    img.attr('src', "{% static 'img/spokojeny_zakaznik.png' %}");
+
+    loadRegions(page, pageElement);
+
 }
 
 function loadApp() {
