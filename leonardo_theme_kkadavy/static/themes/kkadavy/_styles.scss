@@ -168,6 +168,10 @@ header .pageiconlink-content-default {
     }
 }
 
+.template-pills.treenavigation-content-pills .nav-pills li a:focus {
+    background-color: inherit;
+}
+
 // dropdown menu
 
 .navbar-nav > li {
