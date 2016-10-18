@@ -26,9 +26,18 @@ a:hover, a:focus {
 header {
     display: table;
     width: 100%;
-    background: url('/static/img/zkusebni_foto_podhl_stranku_final.png');
+    background: #ffffff;
     background-size: cover;
     text-align: center;
+}
+
+#background-video {
+    position: fixed;
+}
+
+#main_col_12 {
+    padding: 0;
+    background-color: #ffffff;
 }
 
 .fullSection {
@@ -315,9 +324,12 @@ footer .nav > li > a:hover {
 footer {
     display: inline-block;
     width: 100%;
-    background-color: #7a4501;
-    padding: 18px;
     color: white;
+    .container-fluid div.leonardo-region {
+        background: #7a4501;
+        padding: 20px 10px;
+        margin-bottom: -5px;
+    }
 }
 
 .thumb a img {
