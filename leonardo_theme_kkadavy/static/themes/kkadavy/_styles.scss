@@ -40,15 +40,16 @@ header {
     background-color: #ffffff;
 }
 
-.fullSection {
-    padding-top: 100px;
-}
-
 .intro-body {
     display: table-cell;
     vertical-align: middle;
     height: calc(100vh - 0px);
     background: url('/static/img/pattern_overlay.png');
+}
+
+.col-xs-12.contextnavigation-base-default {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .toolbar-image {
@@ -82,6 +83,7 @@ header .pageiconlink-content-default {
     border-color: #f7c247;
     margin: 0;
     height: 75px;
+    margin-bottom: -4px;
     .navbar-nav {
         margin-bottom: -5px;
         > li > a {
@@ -124,6 +126,23 @@ header .pageiconlink-content-default {
 
 .leonardo-region-preview .linkmenu-base-default {
     z-index: 5;
+}
+
+// sections
+
+.fullSection {
+    padding-top: 50px;
+}
+
+#o-firme {
+    background: url('/static/img/pozadi_ofrime.jpg');
+    padding: 40px 0px;
+    padding-top: 79px;
+}
+
+#knedliky {
+    padding-bottom: 50px;
+    padding-top: 80px;
 }
 
 // navbar toggle

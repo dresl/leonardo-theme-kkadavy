@@ -41,3 +41,12 @@ window.setInterval(function(){
         window.addEventListener("resize", ResponsiveClassContainer);
     }
 }, 500);
+
+// vide.js
+
+ $(document).ready(function () {
+   $('#knedliky').vide({
+     'mp4': 'static/videos/fruity',
+     'poster': 'static/videos/fruity',
+   });
+ });
