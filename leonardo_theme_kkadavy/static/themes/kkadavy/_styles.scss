@@ -62,6 +62,7 @@ header {
 }
 
 .order-list-btn {
+    @extend .btn-block;
     background-color: #8cc63c;
     border-color: #8cc63c;
     border-radius: 0;
@@ -218,6 +219,10 @@ header .pageiconlink-content-default {
     background-color: inherit;
 }
 
+.leonardo-widget.maplocation-base-default {
+    padding: 0;
+}
+
 // dropdown menu
 
 .navbar-nav > li {
@@ -366,14 +371,17 @@ footer {
     display: inline-block;
     width: 100%;
     color: white;
+    background: #7a4501;
+    padding: 20px 10px;
+    margin-bottom: -5px;
+    background-image: url("/static/img/logo_bila_final.png");
+    background-size: 713px;
+    background-position: 55px -90px;
+    background-repeat: no-repeat;
     .container-fluid div.leonardo-region {
         background: #7a4501;
         padding: 20px 10px;
         margin-bottom: -5px;
-        background-image: url("/static/img/logo_bila_final.png");
-        background-size: 713px;
-        background-position: 55px -90px;
-        background-repeat: no-repeat;
     }
     .nav > li > a {
         color: white;
@@ -382,7 +390,82 @@ footer {
             background-color: transparent;
         }
     }
+    form {
+        .form-group {
+            margin-bottom: 9px;
+        }
+        .form-group:nth-child(2) {
+            padding-right: 4px!important;
+        }
+        .form-group:nth-child(3) {
+            padding-left: 4px!important;
+        }
+        .form-group:nth-child(2), .form-group:nth-child(3) {
+            width: 50%;
+            padding: 0;
+            display: inline-block;
+        }
+        .buttonHolder input {
+            @extend .order-list-btn;
+        }
+        label {
+            display: none;
+        }
+    }
+    .template-default.form-content-default {
+        margin-top: -20px;
+        .widget-title {
+            color: #8cc63c;
+            font-size: 20px;
+        }
+    }
+    .form-control {
+        display: block;
+        width: 100%;
+        border: none!important;
+        height: 34px;
+        text-align: center;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+        font-weight: bold;
+        border-radius: 0px;
+        color: #ffffff;
+        background-color: #7d7d7d;
+    }
+    ::-webkit-input-placeholder {
+       color: #8cc63c!important;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: #8cc63c!important;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #8cc63c!important;
+    }
+
+    :-ms-input-placeholder {  
+       color: #8cc63c!important;
+    }
+    textarea {
+        height: 170px!important;
+        resize: none;
+    }
+    .nav > li > a {
+        color: #da9f14;
+        padding: 6px;
+        font-weight: bold;
+        transition: all 0.4s ease;
+        background-color: #543206;
+        width: 167px;
+        text-align: center;
+        &:hover {
+            background-color: #352004;
+        }
+    }
 }
+
 
 .thumb a img {
     width: 35px;
