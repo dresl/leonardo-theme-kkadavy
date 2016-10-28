@@ -13,12 +13,13 @@ body {
     color: #333;
     margin: 0;
     padding: 0!important;
+    overflow-x: hidden;
 }
 
 a:hover, a:focus {
     text-decoration: none;
 }
-
+    
 .container-fluid {
     padding-right: 0;
 }
@@ -54,6 +55,29 @@ header {
 
 .toolbar-image {
     width: 60%;
+}
+
+.leonardo-widget.text-center.form-base-default {
+    padding: 0;
+}
+
+.order-list-btn {
+    background-color: #8cc63c;
+    border-color: #8cc63c;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.order-list-btn:hover {
+    background-color: #639221;
+    border-color: #263e04;
+}
+
+.order-list-btn:focus {
+    background-color: #8cc63c;
+    border-color: #8cc63c;
 }
 
 .menu-logo {
@@ -338,15 +362,6 @@ figure.effect-lily h2 {
 
 // footer
 
-footer .nav > li > a {
-    color: white;
-    font-weight: bold;
-}
-
-footer .nav > li > a:hover {
-    background-color: transparent;
-}
-
 footer {
     display: inline-block;
     width: 100%;
@@ -355,6 +370,17 @@ footer {
         background: #7a4501;
         padding: 20px 10px;
         margin-bottom: -5px;
+        background-image: url("/static/img/logo_bila_final.png");
+        background-size: 713px;
+        background-position: 55px -90px;
+        background-repeat: no-repeat;
+    }
+    .nav > li > a {
+        color: white;
+        font-weight: bold;
+        &:hover {
+            background-color: transparent;
+        }
     }
 }
 

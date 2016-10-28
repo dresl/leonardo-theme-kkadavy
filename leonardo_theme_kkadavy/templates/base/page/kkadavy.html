@@ -19,9 +19,6 @@
     {% if feincms_page.layout == "fixed" or feincms_page.layout == "fluid" %}
     {% if request.path == '/' %}
     <header id="header">
-    <video autoplay loop muted poster id="background-video">
-      <source src="{% static 'videos/fruity.mp4' %}" type="video/mp4">
-    </video>
       <div class="intro-body">
         <div class="container">  
         {% feincms_render_region feincms_page "toolbar" request %}
@@ -44,6 +41,7 @@
       <div class="col-xs-12" id="main_col_12">
       {% feincms_render_region feincms_page "col3" request %}
       {% render_region_tools feincms_page "col3" request %}
+      {% block body_main %}{% endblock %}
       </div>
     </div>
     {% else %}
@@ -56,7 +54,6 @@
       <section class="col3 {% get_col_classes feincms_page 'col3' %}">
           {% feincms_render_region feincms_page "col3" request %}
           {% render_region_tools feincms_page "col3" request %}
-        {% block body_main %}{% endblock %}
       </section>
       <!-- <section class="col2 {% get_col_classes feincms_page 'col2' %}">
         {% feincms_render_region feincms_page "col2" request %}

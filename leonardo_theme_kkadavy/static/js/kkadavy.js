@@ -50,3 +50,10 @@ window.setInterval(function(){
      'poster': 'static/videos/fruity',
    });
  });
+
+  $(document).ready(function () {
+   $('#header').vide({
+     'mp4': 'static/videos/fruity',
+     'poster': 'static/videos/fruity',
+   });
+ });
