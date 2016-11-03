@@ -159,13 +159,16 @@ header .pageiconlink-content-default {
     padding-top: 50px;
 }
 
+.col-xs-12 .leonardo-widget {
+    padding: 0;
+}
+
 #o-firme {
     background-image: url('/static/img/pozadi_ofrime.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 105%;
-    padding: 40px 0px;
-    padding-top: 78px;
+    padding: 78px 0px 0px 0px;
 }
 
 #knedliky {
@@ -217,10 +220,6 @@ header .pageiconlink-content-default {
 
 .template-pills.treenavigation-content-pills .nav-pills li a:focus {
     background-color: inherit;
-}
-
-.leonardo-widget.maplocation-base-default {
-    padding: 0;
 }
 
 // dropdown menu
@@ -376,10 +375,10 @@ footer {
     margin-bottom: -5px;
     background-image: url("/static/img/logo_bila_final.png");
     background-size: 713px;
-    background-position: 55px -90px;
+    background-position: 60px 0px;
     background-repeat: no-repeat;
     .container-fluid div.leonardo-region {
-        background: #7a4501;
+        background: inherit;
         padding: 20px 10px;
         margin-bottom: -5px;
     }
