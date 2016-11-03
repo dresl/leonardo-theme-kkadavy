@@ -176,6 +176,19 @@ header .pageiconlink-content-default {
     padding-top: 80px;
 }
 
+#recepty {
+    background: url("/static/img/pozadi_recepty.jpg");
+    background-size: cover;
+    height: 1080px;
+    display: table;
+    width: 100%;
+    .container-fluid {
+        display: table-cell;
+        vertical-align: middle;
+        height: calc(100vh - 0px);
+    }
+}
+
 // navbar toggle
 
 .navbar-toggle {
@@ -325,6 +338,10 @@ header .pageiconlink-base-default {
         .siteheading-base-default {
             z-index: 50;
         }
+    }
+
+    #recepty {
+        background-position: -400px;
     }
 }
 
