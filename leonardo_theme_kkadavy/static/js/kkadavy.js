@@ -44,16 +44,9 @@ window.setInterval(function(){
 
 // vide.js
 
- $(document).ready(function () {
-   $('#knedliky').vide({
-     'mp4': 'static/videos/fruity',
-     'poster': 'static/videos/fruity',
-   });
- });
-
-  $(document).ready(function () {
-   $('#header').vide({
-     'mp4': 'static/videos/fruity',
-     'poster': 'static/videos/fruity',
-   });
+$(document).ready(function () {
+    $('#header').vide({
+        'mp4': 'static/videos/fruity',
+        'poster': 'static/videos/fruity',
+    });
  });
