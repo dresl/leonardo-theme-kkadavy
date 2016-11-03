@@ -6,7 +6,7 @@
     <div class="grid">
         {% for item in row %}
         <figure class="effect-lily" onclick="location.href = '{{ item.web_address }}';">
-            {% include "widget/linkmenu/_kkadavy.html" with link=item %}
+            <img src="{{ item.image.url }}" alt="" />
             <figcaption>
                 <div>
                     <h2><span>{{ item.translation.name }}</span> knedlíky</h2>

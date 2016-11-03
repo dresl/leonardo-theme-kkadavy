@@ -495,13 +495,13 @@ footer {
 // scrollbar
 
 body::-webkit-scrollbar {
-    width: 11px;
-    background-color: #f7c247;
+    width: 5px;
+    background-color: black;
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #f7c247;
-    border: 1px solid #7a4501;
+    background-color: #0a0a09;
+    border: 1px solid #0a0a09;
 }
 
 body::-webkit-scrollbar-track {
