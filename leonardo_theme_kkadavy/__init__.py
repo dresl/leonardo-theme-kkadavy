@@ -5,7 +5,6 @@ LEONARDO_APPS = [
 
 LEONARDO_CSS_FILES = [
     'css/ihover.css',
-    'css/set1.css',
     'css/magazine.css',
 ]
 
