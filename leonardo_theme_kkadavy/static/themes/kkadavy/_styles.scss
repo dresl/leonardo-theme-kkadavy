@@ -358,9 +358,20 @@ header .pageiconlink-base-default {
             z-index: 50;
         }
     }
-
     #recepty {
-        background-position: -400px;
+        background: url("/static/img/pozadi_recepty_plain_blue.jpg");
+        background-size: 100%;
+        height: 1077px;
+        display: table;
+        width: 100%;
+        .container-fluid {
+            display: table-cell;
+            vertical-align: middle;
+            height: calc(100vh - 0px);
+            .leonardo-region {
+                margin-top: -220px;
+            }
+        }
     }
 
     .linkmenu-content-recepty div {
