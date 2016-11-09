@@ -1,18 +1,35 @@
 {% extends widget.get_base_template %}
 
 {% block content %}
+<style type="text/css">
+.ih-item.square {
+    width: 100%;
+    margin-bottom: 30px;
+    height: 216px;
+    border: 4px solid #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.ih-item.square .img {
+    height: 100%;
+}
+</style>
 {% block items %}
 {% for row in widget.get_rows %}
-    <div class="grid">
+    <div class="row">
         {% for item in row %}
-        <figure class="effect-lily" onclick="location.href = '{{ item.web_address }}';">
-            <img src="{{ item.image.url }}" alt="" />
-            <figcaption>
-                <div>
-                    <h2><span>{{ item.translation.name }}</span> knedlíky</h2>
-                </div>
-            </figcaption>           
-        </figure>
+        <div class="col-xs-12 col-md-3">
+            <!-- normal -->
+            <div class="ih-item square colored effect8 scale_down">
+                <a href="{{ item.web_address }}">
+                    <div class="img"><img src="{{ item.image.url }}" alt="img"></div>
+                    <div class="info">
+                      <h3>{{ item.translation.name }}</h3>
+                      <p>knedlíky</p>
+                    </div>
+                </a>
+            </div>
+            <!-- end normal -->
+        </div>
         {% endfor %}
     </div>
 {% endfor %}
