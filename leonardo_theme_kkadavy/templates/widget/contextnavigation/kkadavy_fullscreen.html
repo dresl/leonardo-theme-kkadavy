@@ -1,0 +1,33 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+{% for item in items %}
+{% if item.slug == 'knedliky' %}
+<div class="three_bg">
+<div id="{{ item.slug }}" class="">
+  <div class="container{% if item.layout == 'fluid' %}-fluid{% endif %} {{ widget.page_region }}-{{ widget.parent.slug }} section-{{ forloop.counter }}">
+    {% include "widget/contextnavigation/_item.html" with item=item  %}
+  </div>
+</div>
+{% elif item.slug == 'recepty' %}
+<div id="{{ item.slug }}" class="">
+  <div class="container{% if item.layout == 'fluid' %}-fluid{% endif %} {{ widget.page_region }}-{{ widget.parent.slug }} section-{{ forloop.counter }}">
+    {% include "widget/contextnavigation/_item.html" with item=item  %}
+  </div>
+</div>
+{% elif item.slug == 'vyroba' %}
+<div id="{{ item.slug }}" class="">
+  <div class="container{% if item.layout == 'fluid' %}-fluid{% endif %} {{ widget.page_region }}-{{ widget.parent.slug }} section-{{ forloop.counter }}">
+    {% include "widget/contextnavigation/_item.html" with item=item  %}
+  </div>
+</div>
+</div>
+{% else %}
+<div id="{{ item.slug }}" class="">
+  <div class="container{% if item.layout == 'fluid' %}-fluid{% endif %} {{ widget.page_region }}-{{ widget.parent.slug }} section-{{ forloop.counter }}">
+    {% include "widget/contextnavigation/_item.html" with item=item  %}
+  </div>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}
