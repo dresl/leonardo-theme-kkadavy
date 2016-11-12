@@ -160,7 +160,7 @@ header .pageiconlink-content-default {
 }
 
 #o-firme {
-    background-image: url('/static/img/pozadi_ofrime.jpg');
+    background-image: url('/static/img/pozadi_plain_blue.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 105%;
@@ -186,9 +186,42 @@ header .pageiconlink-content-default {
         label {
             color: #efefef;
         }
+        .form-control {
+            display: block;
+            width: 100%;
+            border: none!important;
+            height: 34px;
+            text-align: center;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857;
+            font-weight: bold;
+            border-radius: 1px;
+            color: #ffffff;
+            background-color: #717171;
+        }
+        ::-webkit-input-placeholder {
+           color: #8cc63c!important;
+        }
+
+        :-moz-placeholder { /* Firefox 18- */
+           color: #8cc63c!important;
+        }
+
+        ::-moz-placeholder {  /* Firefox 19+ */
+           color: #8cc63c!important;
+        }
+
+        :-ms-input-placeholder {  
+           color: #8cc63c!important;
+        }
+        textarea {
+            height: 170px!important;
+            resize: none;
+        }
     }
     .modal-content.ui-draggable {
-        background: url("/static/img/pozadi_recepty_plain_blue.jpg");
+        background: url("/static/img/pozadi_plain_blue.jpg");
     }
     .modal-header {
         border-bottom: 0px;
@@ -236,7 +269,7 @@ header .pageiconlink-content-default {
 
 
 div#canvas {
-    background: url(/static/img/pozadi_recepty_plain_blue.jpg);
+    background: url(/static/img/pozadi_plain_blue.jpg);
     background-size: 160%;
 }
 
@@ -478,6 +511,55 @@ footer {
             display: none;
         }
     }
+    .form-control {
+        display: block;
+        width: 100%;
+        border: none!important;
+        height: 34px;
+        text-align: center;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+        font-weight: bold;
+        border-radius: 1px;
+        color: #ffffff;
+        background-color: #717171;
+    }
+    ::-webkit-input-placeholder {
+       color: #8cc63c!important;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: #8cc63c!important;
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #8cc63c!important;
+    }
+
+    :-ms-input-placeholder {  
+       color: #8cc63c!important;
+    }
+    textarea {
+        height: 170px!important;
+        resize: none;
+    }
+    .modal-content.ui-draggable {
+        background: url("/static/img/pozadi_plain_blue.jpg");
+    }
+    .modal-header {
+        border-bottom: 0px;
+        .modal-title {
+            font-size: 25px;
+            color: #f3f3f3;
+        }
+    }
+    button.close {
+        color: #6f6f6f;
+        font-size: 30px;
+        opacity: 0.7;
+        margin-top: -5px;
+    }
     .template-default.form-content-default {
         margin-top: -20px;
         .widget-title {
@@ -498,43 +580,6 @@ footer {
         }
     }
 }
-
-// form
-
-.form-control {
-    display: block;
-    width: 100%;
-    border: none!important;
-    height: 34px;
-    text-align: center;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857;
-    font-weight: bold;
-    border-radius: 1px;
-    color: #ffffff;
-    background-color: #717171;
-}
-::-webkit-input-placeholder {
-   color: #8cc63c!important;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: #8cc63c!important;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #8cc63c!important;
-}
-
-:-ms-input-placeholder {  
-   color: #8cc63c!important;
-}
-textarea {
-    height: 170px!important;
-    resize: none;
-}
-
 
 .thumb a img {
     width: 35px;
