@@ -129,11 +129,11 @@
 	-o-transition: -webkit-box-shadow 0.5s;
 	-ms-transition: -ms-box-shadow 0.5s;
 
-	-webkit-box-shadow:0 0 20px #ccc;
-	-moz-box-shadow:0 0 20px #ccc;
-	-o-box-shadow:0 0 20px #ccc;
-	-ms-box-shadow:0 0 20px #ccc;
-	box-shadow:0 0 20px #ccc;
+	-webkit-box-shadow:0 0 20px #000;
+	-moz-box-shadow:0 0 20px #000;
+	-o-box-shadow:0 0 20px #000;
+	-ms-box-shadow:0 0 20px #000;
+	box-shadow:0 0 20px #000;
 }
 
 .magazine-viewport .next-button,

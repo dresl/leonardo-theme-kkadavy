@@ -184,7 +184,7 @@ header .pageiconlink-content-default {
             @extend .order-list-btn;
         }
         label {
-            color: #efefef;
+            display: none;
         }
         .form-control {
             display: block;
@@ -197,8 +197,8 @@ header .pageiconlink-content-default {
             line-height: 1.42857;
             font-weight: bold;
             border-radius: 1px;
-            color: #ffffff;
-            background-color: #717171;
+            color: #1f1f1f;
+            background-color: #ffffff;
         }
         ::-webkit-input-placeholder {
            color: #8cc63c!important;
@@ -243,6 +243,7 @@ header .pageiconlink-content-default {
     padding-bottom: 50px;
     padding-top: 200px;
     display: table;
+    width: 100%;
     .container-fluid {
         display: table-cell;
         vertical-align: middle;
@@ -269,8 +270,15 @@ header .pageiconlink-content-default {
 
 
 div#canvas {
-    background: url(/static/img/pozadi_plain_blue.jpg);
-    background-size: 160%;
+    background: url(/static/img/pozadi_knedliky_recepty_vyroba.jpg);
+    background-size: 100%;
+}
+
+.span-img-knedliky {
+    float: left;
+    width: 25%;
+    padding-right: 9px;
+    padding-left: 9px;
 }
 
 // navbar toggle
@@ -406,6 +414,7 @@ header .pageiconlink-base-default {
             width: 80%;
         }
     }
+
     .treenavigation-content-kkadavy_menu .col-xs-12 {
         padding-bottom: 15px;
     }
@@ -424,8 +433,17 @@ header .pageiconlink-base-default {
         }
     }
 
-    .linkmenu-content-recepty div {
-        padding-bottom: 15px;
+    .span-img-knedliky {
+        float: left;
+        width: 100%;
+    }
+
+    .ih-item.circle {
+        margin-left: 0%!important;
+    }
+
+    .linkmenu-content-recepty .col-sm-4 {
+        top: 125px;
     }
 }
 
@@ -473,10 +491,7 @@ footer {
     background: #7a4501;
     padding: 20px 10px;
     margin-bottom: -5px;
-    background-image: url("/static/img/logo_bila_final.png");
-    background-size: 713px;
-    background-position: 60px 0px;
-    background-repeat: no-repeat;
+    background-image: url("/static/img/pozadi_pod_kontakt.jpg");
     .container-fluid div.leonardo-region {
         background: inherit;
         padding: 20px 10px;
@@ -522,8 +537,8 @@ footer {
         line-height: 1.42857;
         font-weight: bold;
         border-radius: 1px;
-        color: #ffffff;
-        background-color: #717171;
+        color: #1f1f1f;
+        background-color: #ffffff;
     }
     ::-webkit-input-placeholder {
        color: #8cc63c!important;

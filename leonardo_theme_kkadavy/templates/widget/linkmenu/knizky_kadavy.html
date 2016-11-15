@@ -33,11 +33,11 @@
                 </script>
                 {% if not item.ordering|divisibleby:2 %}
                 <img width="76" height="100" class="page-{{ item.ordering }} page-{{ item.id }}" src="{{ item.image.url }}">
-                <span style="margin-left: {% if item.ordering != 1 %}10px{% endif %}">{{ item.ordering }}</span></li>
+                <span style="color: white;margin-left: {% if item.ordering != 1 %}10px{% endif %}">{{ item.ordering }}</span></li>
                 <li>
                 {% else %}
                 <img width="76" height="100" class="page-{{ item.ordering }}" src="{{ item.image.url }}">
-                <span style="{% if not forloop.last %}margin-left: -7px{% endif%}">{{ item.ordering }}{% if item.ordering != 1 and not forloop.last %} - {% endif %}</span>
+                <span style="color: white;{% if not forloop.last %}margin-left: -7px{% endif%}">{{ item.ordering }}{% if item.ordering != 1 and not forloop.last %} - {% endif %}</span>
                 {% endif %}
             {% endfor %}
             </li>
