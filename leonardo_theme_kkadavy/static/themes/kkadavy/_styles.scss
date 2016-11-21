@@ -255,10 +255,21 @@ header .pageiconlink-content-default {
     width: 100%;
     .container-fluid {
         display: table-cell;
+        padding-top: 50px;
         vertical-align: middle;
-        height: calc(100vh - 0px);
+        height: calc(71vh - -160px);
         .leonardo-region {
             margin-top: -220px;
+        }
+    }
+}
+
+#vyroba {
+    padding: 0;
+    .leonardo-content.htmltext-content-default {
+        p {
+            margin-bottom: 30px;
+            padding-top: 150px;
         }
     }
 }
