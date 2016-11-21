@@ -498,10 +498,19 @@ footer {
         margin-bottom: -5px;
     }
     .nav > li > a {
-        color: white;
+        color: #ffffff;
+        padding: 6px;
+        font-size: 28px;
+        border-radius: 5px;
         font-weight: bold;
+        transition: all 0.4s ease;
+        background-color: inherit;
+        width: 48px;
+        text-align: center;
         &:hover {
-            background-color: transparent;
+            color: #ffffff;
+            background-color: inherit;
+            box-shadow: 0px 0px 9px 1px #ffffff;
         }
     }
     form {
@@ -580,18 +589,6 @@ footer {
         .widget-title {
             color: #8cc63c;
             font-size: 20px;
-        }
-    }
-    .nav > li > a {
-        color: #da9f14;
-        padding: 6px;
-        font-weight: bold;
-        transition: all 0.4s ease;
-        background-color: #543206;
-        width: 167px;
-        text-align: center;
-        &:hover {
-            background-color: #352004;
         }
     }
 }

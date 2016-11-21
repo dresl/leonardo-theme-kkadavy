@@ -1,0 +1,20 @@
+{% extends widget.get_base_template %}
+
+{% load i18n %}
+
+{% block content %}
+<ul class="nav {% if widget.inline %}navbar-nav navbar-right{% else %}navbar-stacked{% endif %}">
+  {% if request.user.is_authenticated %}
+  {% comment %}
+  <li><a data-toggle="control-sidebar" href="#">{{ request.user.username }}</a></li>
+  {% endcomment %}
+  <li><a href="{% url 'logout' %}?next={{ next }}"><i class="fa fa-unlock" aria-hidden="true"></i></a></li>
+  {% else %}
+  {% if widget.type == 2 %}
+  <li><a class="ajax-modal" href="{% url 'login' %}?next={{ next }}"><i class="fa fa-unlock-alt" aria-hidden="true"></i></a></li>
+  {% else %}
+  <li><a href="{% url 'admin:login' %}"><i class="fa fa-unlock-alt" aria-hidden="true"></i></a></li>
+  {% endif %}
+  {% endif %}
+</ul>
+{% endblock %}
