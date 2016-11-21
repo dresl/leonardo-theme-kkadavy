@@ -497,6 +497,13 @@ footer {
         padding: 20px 10px;
         margin-bottom: -5px;
     }
+    .btn-social-icon {
+        margin-top: 30px;
+        margin-left: -8px;
+        > :first-child {
+            font-size: 37px;
+        }
+    }
     .nav > li > a {
         color: #ffffff;
         padding: 6px;
