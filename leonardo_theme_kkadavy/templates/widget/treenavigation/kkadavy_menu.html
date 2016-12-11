@@ -43,16 +43,8 @@
 </div>
 
 <script type="text/javascript">
-// jQuery for page scrolling feature - requires jQuery Easing plugin
-$('header a.page-scroll').bind('click', function(event) {
-    var $anchor = $(this);
-    $('html, body').stop().animate({
-        scrollTop: ($($anchor.attr('href').replace("/", "")).offset().top - 70)
-    }, 1500, 'easeInOutExpo');
-    event.preventDefault();
-});
 
-$('#nav a.page-scroll').bind('click', function(event) {
+$('a.page-scroll').bind('click', function(event) {
     var $anchor = $(this);
     $('html, body').stop().animate({
         scrollTop: ($($anchor.attr('href').replace("/", "")).offset().top + 10)

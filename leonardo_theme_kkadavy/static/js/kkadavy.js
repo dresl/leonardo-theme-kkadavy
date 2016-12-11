@@ -1,9 +1,8 @@
-// nav affix
+// affix
 
-$('#nav').affix({
-      offset: {
-        top: $('header').height()
-      }
+$(document).ready(function(){
+    /* affix the navbar after scroll below header */
+    $(".navbar-affix").affix({offset: {top: $("header").outerHeight(true)} });
 });
 
 // responsive menu
