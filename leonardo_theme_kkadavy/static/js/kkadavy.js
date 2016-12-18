@@ -44,8 +44,14 @@ window.setInterval(function(){
 // vide.js
 
 $(document).ready(function () {
-    $('#header').vide({
-        'mp4': 'static/videos/fruity',
-        'poster': 'static/videos/fruity',
-    });
+    if ($('.navbar-static-top').width() > 700){
+        $('#header').vide({
+            'mp4': 'static/videos/fruity',
+            'poster': 'static/videos/fruity',
+        });
+    } else {
+        $('#header').vide({
+            'poster': 'static/videos/fruity',
+        });
+    }
  });
