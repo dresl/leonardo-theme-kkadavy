@@ -43,15 +43,15 @@ window.setInterval(function(){
 
 // vide.js
 
-$(document).ready(function () {
-    if ($('.navbar-static-top').width() > 700){
-        $('#header').vide({
-            'mp4': 'static/videos/fruity',
-            'poster': 'static/videos/fruity',
-        });
-    } else {
-        $('#header').vide({
-            'poster': 'static/videos/fruity',
-        });
-    }
- });
+// $(document).ready(function () {
+//     if ($('.navbar-static-top').width() > 700){
+//         $('#header').vide({
+//             'mp4': 'static/videos/fruity',
+//             'poster': 'static/videos/fruity',
+//         });
+//     } else {
+//         $('#header').vide({
+//             'poster': 'static/videos/fruity',
+//         });
+//     }
+//  });

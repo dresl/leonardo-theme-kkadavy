@@ -1,4 +1,5 @@
 {% extends widget.get_base_template %}
+{% load thumbnail %}
 
 {% block content %}
 <style type="text/css">
@@ -21,7 +22,11 @@
     <div class="col-sm-4">
         <!-- colored -->
         <div class="ih-item circle colored effect10 top_to_bottom"><a href="{{ item.web_address }}">
-            <div class="img"><img src="{{ item.image.url }}" alt="" /></div>
+            <div class="img">
+            {% thumbnail item.image.file widget.thumb_geom format="PNG" as image %}
+                <img class="img-responsive preview-img-swipe" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+            {% endthumbnail %}
+            </div>
             <div class="info">
                 <h5>{{ item.translation.name|safe }}</h5>
                 <p>{{ item.translationo.description}}</p>

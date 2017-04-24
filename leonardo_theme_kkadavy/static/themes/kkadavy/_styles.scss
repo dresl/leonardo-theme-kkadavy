@@ -55,7 +55,6 @@ header {
     display: table-cell;
     vertical-align: middle;
     height: calc(100vh - 0px);
-    background: url('/static/img/pattern_overlay.png');
 }
 
 .col-xs-12.contextnavigation-base-default {
@@ -103,8 +102,14 @@ header {
     width: 80%;
 }
 
-header .pageiconlink-content-default {
-    padding-top: 45px;
+header {
+    background-image: url("/static/img/toolbar_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    .pageiconlink-content-default {
+        padding-top: 45px;
+    }
 }
 
 // nav
@@ -166,11 +171,10 @@ header .pageiconlink-content-default {
 }
 
 #o-firme {
-    background-image: url('/static/img/pozadi_plain_blue.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 105%;
+    background-color: #0e1e2f;
     padding: 78px 0px 0px 0px;
+    color: white;
+    font-weight: bold;
     form {
         .form-group {
             margin-bottom: 9px;
@@ -227,7 +231,7 @@ header .pageiconlink-content-default {
         }
     }
     .modal-content.ui-draggable {
-        background: url("/static/img/pozadi_plain_blue.jpg");
+        background-color: #0e1e2f;
     }
     .modal-header {
         border-bottom: 0px;
@@ -249,42 +253,43 @@ header .pageiconlink-content-default {
 }
 
 #order_form_kkadavy {
-        label {
-            display: none;
-        }
-        .form-control {
-            display: block;
-            width: 100%;
-            border: none!important;
-            height: 34px;
-            text-align: center;
-            padding: 6px 12px;
-            font-size: 14px;
-            line-height: 1.42857;
-            font-weight: bold;
-            border-radius: 1px;
-            color: #1f1f1f;
-            background-color: #ffffff;
-        }
-        ::-webkit-input-placeholder {
-           color: #8cc63c!important;
-        }
+    background-color: #0e1e2f;
+    label {
+        display: none;
+    }
+    .form-control {
+        display: block;
+        width: 100%;
+        border: none!important;
+        height: 34px;
+        text-align: center;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857;
+        font-weight: bold;
+        border-radius: 1px;
+        color: #1f1f1f;
+        background-color: #ffffff;
+    }
+    ::-webkit-input-placeholder {
+       color: #8cc63c!important;
+    }
 
-        :-moz-placeholder { /* Firefox 18- */
-           color: #8cc63c!important;
-        }
+    :-moz-placeholder { /* Firefox 18- */
+       color: #8cc63c!important;
+    }
 
-        ::-moz-placeholder {  /* Firefox 19+ */
-           color: #8cc63c!important;
-        }
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #8cc63c!important;
+    }
 
-        :-ms-input-placeholder {  
-           color: #8cc63c!important;
-        }
-        textarea {
-            height: 170px!important;
-            resize: none;
-        }
+    :-ms-input-placeholder {  
+       color: #8cc63c!important;
+    }
+    textarea {
+        height: 170px!important;
+        resize: none;
+    }
     .modal-footer {
         border-top: none;
     }
@@ -335,13 +340,12 @@ button.close {
 }
 
 .three_bg {
-    background: url('/static/img/pozadi_knedliky_recepty_vyroba.jpg');
+    background: url('/static/img/full_page_bg.jpg');
     background-size: 100%;
 }
 
-
 div#canvas {
-    background: url(/static/img/pozadi_knedliky_recepty_vyroba.jpg);
+    background: url(/static/img/full_page_bg.jpg);
     background-size: 100%;
 }
 
@@ -486,10 +490,6 @@ header .pageiconlink-base-default {
         }
     }
 
-    .treenavigation-content-kkadavy_menu .col-xs-12 {
-        padding-bottom: 15px;
-    }
-
     .responsive_menu {
         @extend .container-fluid;
     }
@@ -559,10 +559,9 @@ footer {
     display: inline-block;
     width: 100%;
     color: white;
-    background: #7a4501;
+    background: #0e1e2f;
     padding: 20px 10px;
     margin-bottom: -5px;
-    background-image: url("/static/img/pozadi_pod_kontakt.jpg");
     .container-fluid div.leonardo-region {
         background: inherit;
         padding: 20px 10px;
@@ -647,7 +646,7 @@ footer {
         resize: none;
     }
     .modal-content.ui-draggable {
-        background: url("/static/img/pozadi_plain_blue.jpg");
+        background-color: #0e1e2f;
     }
     .modal-header {
         border-bottom: 0px;

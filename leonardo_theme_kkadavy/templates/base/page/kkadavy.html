@@ -26,12 +26,11 @@
       </div>
     </header>
     {% endif %}
-    <div>
-      <div class="{% if request.path == '/' %}navbar-affix {% endif %}navbar navbar-static-top">
-        <div class="responsive_menu">
-          {% feincms_render_region feincms_page "header" request %}
-        </div>
-      </div><!-- /.navbar -->
+    <div class="{% if request.path == '/' %}navbar-affix {% endif %}navbar navbar-static-top">
+      <div class="responsive_menu">
+        {% feincms_render_region feincms_page "header" request %}
+      </div>
+    </div><!-- /.navbar -->
     <div class="container{% if feincms_page.layout == 'fluid' %}-fluid{% endif %}">
       <!-- <div class="col-xs-12 col-md-3" style="padding: 0">
         {% feincms_render_region feincms_page "col1" request %}
