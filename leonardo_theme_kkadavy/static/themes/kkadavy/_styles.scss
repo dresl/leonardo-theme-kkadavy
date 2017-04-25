@@ -171,7 +171,9 @@ header {
 }
 
 #o-firme {
-    background-color: #0e1e2f;
+    background: url("/static/img/blue_bg.jpg");
+    background-size: cover;
+    background-position: center;
     padding: 78px 0px 0px 0px;
     color: white;
     font-weight: bold;
@@ -231,7 +233,7 @@ header {
         }
     }
     .modal-content.ui-draggable {
-        background-color: #0e1e2f;
+        background: url("/static/img/blue_bg.jpg");
     }
     .modal-header {
         border-bottom: 0px;
@@ -253,7 +255,8 @@ header {
 }
 
 #order_form_kkadavy {
-    background-color: #0e1e2f;
+    background: url("/static/img/pozadi_objednavaci_list.jpg");
+    background-size: cover;
     label {
         display: none;
     }
@@ -340,12 +343,12 @@ button.close {
 }
 
 .three_bg {
-    background: url('/static/img/full_page_bg.jpg');
+    background: url('/static/img/bg_full_page.jpg');
     background-size: 100%;
 }
 
 div#canvas {
-    background: url(/static/img/full_page_bg.jpg);
+    background: url(/static/img/bg_full_page.jpg);
     background-size: 100%;
 }
 
@@ -559,7 +562,7 @@ footer {
     display: inline-block;
     width: 100%;
     color: white;
-    background: #0e1e2f;
+    background: url("/static/img/blue_bg.jpg");
     padding: 20px 10px;
     margin-bottom: -5px;
     .container-fluid div.leonardo-region {
@@ -646,7 +649,7 @@ footer {
         resize: none;
     }
     .modal-content.ui-draggable {
-        background-color: #0e1e2f;
+        background: url("/static/img/blue_bg.jpg");
     }
     .modal-header {
         border-bottom: 0px;
