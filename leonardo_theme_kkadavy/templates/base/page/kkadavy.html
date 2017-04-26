@@ -36,7 +36,7 @@
         {% feincms_render_region feincms_page "col1" request %}
         {% render_region_tools feincms_page "col1" request %}
       </div> -->
-      <div class="col-xs-12" id="main_col_12">
+      <div class="col-xs-12 {% if request.path != '/' %}blue-bg-pattern{% endif %}" id="main_col_12">
       {% feincms_render_region feincms_page "col3" request %}
       {% render_region_tools feincms_page "col3" request %}
       {% block body_main %}{% endblock %}
@@ -60,7 +60,7 @@
       </div>
     </section>
       {% endif %}
-    <footer>
+    <footer id="footer">
       <div class="container-fluid">
         {% feincms_render_region feincms_page "footer" request %}
       </div>
