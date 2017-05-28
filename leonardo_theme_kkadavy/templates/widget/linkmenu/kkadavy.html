@@ -3,42 +3,56 @@
 
 {% block content %}
 <style type="text/css">
-.ih-item.square {
-    width: 100%;
-    margin-bottom: 30px;
-    margin: 9px auto;
-    max-height: 190px;
-    max-width: 300px;
-    border: 7px solid rgba(97, 104, 115, 0.5)!important;
-    box-shadow: 0px 0px 18px rgb(0, 0, 0);
+figure.effect-marley h2, figure.effect-marley p {
+    position: absolute;
+    right: 30px;
+    left: 30px;
+    color: white;
+    padding: 0;
 }
-.ih-item.square .img {
+.grid figure{
     height: 100%;
+    background: transparent;
+}
+.grid figure img {
+    opacity: 1;
 }
 </style>
 {% block items %}
+<!-- Classic ************************************ -->
+<!-- <div class="row">
 {% for row in widget.get_rows %}
-    <div class="row">
+    <div class="col-xs-12 col-md-6">
         {% for item in row %}
-        <div class="span-img-knedliky">
-            <!-- normal -->
-            <div class="ih-item square colored effect3 bottom_to_top">
-                <a href="{{ item.web_address }}">
-                    <div class="img">
-                    {% thumbnail item.image.file widget.thumb_geom format="PNG" as image %}
-                        <img class="img-responsive preview-img-swipe" itemprop="thumbnail" src="{{ image.url }}" alt="" />
-                    {% endthumbnail %}
-                    </div>
-                    <div class="info">
-                      <h3>{{ item.translation.name }}</h3>
-                      <p>knedlíky</p>
-                    </div>
-                </a>
+        <div class="thumbnail knedliky">
+            <a href="{{ item.web_address }}">
+                {% thumbnail item.image.file widget.thumb_geom format="PNG" as image %}
+                    <img class="img-responsive preview-img-swipe" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+                {% endthumbnail %}
+            </a>
+            <div class="caption">
+                <a href="{{ item.web_address }}"><h3 class="knedliky-heading">{{ item.translation.name }}</h3></a>
+                <button class="btn btn-knedliky-thumb" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Zobrazit produkty</button>
             </div>
-            <!-- end normal -->
         </div>
         {% endfor %}
     </div>
 {% endfor %}
+</div> -->
+
+<!-- Effects ************************************* -->
+<div class="grid">
+{% for item in widget.get_items %}
+    <figure class="effect-marley">
+        {% thumbnail item.image.file widget.thumb_geom format="PNG" as image %}
+        <img class="img-responsive preview-img-swipe" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+        {% endthumbnail %}
+        <figcaption>
+            <h2>{{ item.translation.name }}</h2>
+            <a href="{{ item.web_address }}">View more</a>
+        </figcaption>
+    </figure>
+{% endfor %}
+</div>
 {% endblock %}
 {% endblock %}
