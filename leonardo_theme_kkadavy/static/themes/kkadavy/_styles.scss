@@ -257,68 +257,82 @@ header {
     }
 }
 
-// modal form module
-
-#div_id_email {
-    padding: 5px;
-}
+// modal form module order
 
 .btn-submit-order {
     @extend .order-list-btn;
 }
 
-#order_form_kkadavy {
-    background: url("/static/img/pozadi_objednavaci_list.jpg");
-    background-size: cover;
-    label {
-        display: none;
+#kkadavy_order_formset {
+    .dynamic-form {
+        select {
+            height: 32px;
+            padding-left: 5px;
+            border-radius: 3px;
+            background-color: #ffffff;
+        }
+        input {
+            height: 32px;
+            padding-left: 10px;
+            border-radius: 3px;
+            background-color: #ffffff;
+            border: none;
+        }
     }
-    .form-control {
-        display: block;
-        width: 100%;
-        border: none!important;
-        height: 34px;
-        text-align: center;
-        padding: 6px 12px;
-        font-size: 14px;
-        line-height: 1.42857;
-        font-weight: bold;
-        border-radius: 1px;
-        color: #1f1f1f;
+    td, th {
+        border-top: 0px!important;
+    }
+    th, label {
+        color: #ffffff;
+    }
+    .add-row {
         background-color: #ffffff;
+        padding: 10px 25px;
+        font-weight: bold;
+        color: #000000;
+        border-radius: 6px;
+        border: 1px solid #333333;
+        transition: all 0.2s ease;
+        &:hover {
+            background-color: #d6d6d6;
+        }
     }
-    ::-webkit-input-placeholder {
-       color: #8cc63c!important;
+    .remove-btn-formset {
+        font-size: 29px;
+        color: #d66a6a;
+        margin-top: 3px;
+        transition: all 0.2s ease;
+        &:hover {
+            color: #c34444;
+        }
     }
-
-    :-moz-placeholder { /* Firefox 18- */
-       color: #8cc63c!important;
+    ul.errorlist li {
+        color: #a93d33;
     }
-
-    ::-moz-placeholder {  /* Firefox 19+ */
-       color: #8cc63c!important;
+    .help-icon {
+        color: #ffffff;
+        margin-left: 10px;
     }
-
-    :-ms-input-placeholder {  
-       color: #8cc63c!important;
-    }
-    textarea {
-        height: 170px!important;
-        resize: none;
-    }
-    .modal-footer {
-        border-top: none;
+    .nav-tabs li.required a:after, .form-group.required > label:after,
+    .form-field.required > label:after {
+        color: #9f3632;
     }
 }
 
-button.close {
-    color: #6f6f6f;
-    font-size: 30px;
-    opacity: 0.7;
-    margin-top: -5px;
+.modal-header .close {
+    font-size: 22px;
+    text-shadow: none;
+    opacity: 1;
+    &:hover {
+        color: #CCC!important;
+    }
 }
 
-// end modal form
+.modal-footer {
+    border-top: none;
+}
+
+// modal form module order
 
 #knedliky {
     padding-bottom: 50px;
@@ -377,8 +391,7 @@ div#canvas {
 // navbar toggle
 
 .navbar-toggle {
-    margin-top: 18px;
-    margin-bottom: 8px;
+    margin-top: 13px;
     background-color: #7a4501;
     .icon-bar {
         background-color: #f7c247;
@@ -491,50 +504,6 @@ header .pageiconlink-base-default {
     @extend .container;
 }
 
-/* smartphones */
-@media only screen and (max-width: 760px) {
-    header {
-        .treenavigation-content-kkadavy_menu {
-            display: none;
-            .navbar-collapse.collapse {
-                display: none;
-            }
-        }
-        .pageiconlink-base-default {
-            display: block;
-        }
-        .toolbar-image {
-            width: 80%;
-        }
-    }
-
-    .responsive_menu {
-        @extend .container-fluid;
-    }
-
-    .responsive_menu.container-fluid {
-        .treenavigation-base-default {
-            margin-top: -60px;
-            padding: 0;
-        }
-        .siteheading-base-default {
-            z-index: 50;
-        }
-    }
-
-    .span-img-knedliky {
-        float: left;
-        width: 100%;
-    }
-
-    .ih-item.circle {
-        margin-left: 0%!important;
-    }
-
-    .linkmenu-content-recepty .col-sm-4 {
-        top: 125px;
-    }
-}
 
 .navbar-collapse.collapse.in ul li a {
     padding: 16px;
@@ -765,6 +734,56 @@ footer {
 
 .thumb a img {
     width: 35px;
+}
+
+// smartphones view
+@media only screen and (max-width: 760px) {
+    header {
+        .treenavigation-content-kkadavy_menu {
+            display: none;
+            .navbar-collapse.collapse {
+                display: none;
+            }
+        }
+        .pageiconlink-base-default {
+            display: block;
+        }
+        .toolbar-image {
+            width: 80%;
+        }
+    }
+    .responsive_menu {
+        @extend .container-fluid;
+    }
+    .responsive_menu.container-fluid {
+        .treenavigation-base-default {
+            margin-top: -60px;
+            padding: 0;
+        }
+        .siteheading-base-default {
+            z-index: 50;
+        }
+    }
+    .span-img-knedliky {
+        float: left;
+        width: 100%;
+    }
+    .ih-item.circle {
+        margin-left: 0%!important;
+    }
+    .linkmenu-content-recepty .col-sm-4 {
+        top: 125px;
+    }
+    #kkadavy_order_formset {
+        .dynamic-form {
+            select {
+                width:  100%;
+            }
+            input {
+                width:  100%;
+            }
+        }
+    }
 }
 
 // scrollbar
