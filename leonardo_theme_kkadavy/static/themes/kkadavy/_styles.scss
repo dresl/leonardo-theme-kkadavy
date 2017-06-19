@@ -259,6 +259,14 @@ header {
 
 // modal form module order
 
+.close-alert {
+    float: right;
+    font-size: 22px;
+    margin-top: -5px;
+    color: #295e86;
+    font-weight: bold;
+}
+
 .btn-submit-order {
     @extend .order-list-btn;
 }
