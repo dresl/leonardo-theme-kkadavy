@@ -414,7 +414,7 @@ div#canvas {
 
 .template-pills.treenavigation-content-pills {
     background-color: #7a4501;
-    height: 47px;
+    height: 100%;
     .nav-pills {
         display: inline-block;
         li {
@@ -424,6 +424,7 @@ div#canvas {
                 font-weight: bold;
                 transition: color 0.3s ease;
                 padding: 14px 30px;
+                margin-top: 6px;
                 &:hover {
                     color: #f7c247;
                     background-color: transparent;
