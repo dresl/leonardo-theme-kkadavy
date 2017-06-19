@@ -1,0 +1,172 @@
+{% extends widget.get_base_template %}
+{% load thumbnail staticfiles %}
+
+{% block content %}
+<style type="text/css">
+.photoswipe-multi-gallery {
+    margin-bottom: 12px;
+}
+
+.photoswipe-multi-gallery figure {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 100%;
+}
+
+.photoswipe-multi-gallery figcaption {
+  display: none;
+}
+
+.pswp__button--arrow--left:before {
+  background: none;
+  font-family: fontawesome;
+  content: '\f053';
+  font-size: 50px;
+  left: 24px;
+}
+
+.pswp__button--arrow--right:before {
+  background: none;
+  font-family: fontawesome;
+  content: '\f054';
+  font-size: 50px;
+  left: 0;
+}
+
+.pswp__caption__center {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 10px;
+  line-height: 20px;
+  color: #CCC;
+  letter-spacing: 0.6px;
+}
+
+.pswp__bg {
+  background: rgba(0, 0, 0, 0.67);
+}
+
+.pswp--zoom-allowed .pswp__img {
+  cursor: default !important;
+}
+
+.preview-inner-swipe {
+  text-align: center;
+  background-color: rgba(1, 1, 1, 0.6);
+  position: absolute;
+  z-index: 2;
+  float: left;
+  bottom: 5px;
+}
+
+.preview-title-swipe {
+  font-size: 16px;
+  color: white;
+  margin-top: 12px;
+}
+
+.preview-img-swipe {
+  width: 100%;
+  height: auto;
+  transition: all 0.02s ease;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+.preview-img-swipe:hover {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+</style>
+{% block items %}
+
+{% for item in widget.get_items %}
+  <div class="photoswipe-multi-gallery col-xs-12">
+    <figure itemprop="associatedMedia">
+      <a class="photoswipe-href-js-hide" href="{{ item.image.url }}" itemprop="contentUrl" data-size="1920x1080">
+      {% thumbnail item.image.file widget.thumb_geom format="PNG" as image %}
+      <img class="img-responsive preview-img-swipe" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+      {% endthumbnail %}
+      <div class="preview-inner-swipe">
+        <!-- <h3 class="preview-title-swipe">{{ item.translation.name }}</h3> -->
+      </div>
+      </a>
+      <figcaption itemprop="caption description">{{ item.translation.name }}</figcaption>
+    </figure>
+    {% for sublink in item.relationship.category.link_set.all %}
+    <figure style="display: none" itemprop="associatedMedia">
+      <a class="photoswipe-href-js-hide" href="{{ sublink.image.url }}" itemprop="contentUrl" data-size="1920x1080">
+      {% thumbnail sublink.image.file widget.thumb_geom format="PNG" as image %}
+      <img class="img-responsive" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+      {% endthumbnail %}
+      </a>
+      <figcaption itemprop="caption description">{{ sublink.translation.name }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+  {% endfor %}
+{% endblock %}
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+  <!-- Background of PhotoSwipe. 
+       It's a separate element, as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+
+    <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+    <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+    </div>
+
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+
+      <div class="pswp__top-bar">
+
+        <!--  Controls are self-explanatory. Order can be changed. -->
+
+        <div class="pswp__counter"></div>
+
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader-active when preloader is running -->
+        <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div> 
+      </div>
+
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+
+      <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

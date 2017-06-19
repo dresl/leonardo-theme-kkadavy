@@ -6,7 +6,9 @@ LEONARDO_APPS = [
 LEONARDO_CSS_FILES = [
     'css/ihover.css',
     'css/magazine.css',
-    'css/hover_effects.css'
+    'css/hover_effects.css',
+    'css/default-skin.min.css',
+    'css/photoswipe.min.css',
 ]
 
 LEONARDO_JS_FILES = [
@@ -14,4 +16,7 @@ LEONARDO_JS_FILES = [
     'js/modernizr.2.5.3.min.js',
     'js/hash.js',
     'js/jquery.vide.js',
+    'js/photoswipe.min.js',
+    'js/photoswipe-ui-default.min.js',
+    'js/photoswipe-multigalleries.js',
 ]
