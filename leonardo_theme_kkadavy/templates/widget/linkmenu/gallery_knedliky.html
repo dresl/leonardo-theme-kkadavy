@@ -10,7 +10,7 @@
 .photoswipe-multi-gallery figure {
   display: block;
   float: left;
-  margin: 0 5px 5px 0;
+  padding: 0;
   width: 100%;
 }
 
@@ -59,59 +59,75 @@
   position: absolute;
   z-index: 2;
   float: left;
-  bottom: 5px;
+  bottom: 0px;
 }
 
 .preview-title-swipe {
-  font-size: 16px;
+  font-size: 19px;
   color: white;
+  font-weight: bold;
   margin-top: 12px;
 }
 
-.preview-img-swipe {
+img.border-radius {
   width: 100%;
   height: auto;
-  transition: all 0.02s ease;
+  transition: all 0.25s ease;
   -webkit-filter: grayscale(0%);
   -moz-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 
-.preview-img-swipe:hover {
+img.border-radius:hover {
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   filter: grayscale(100%);
+}
+img.border-radius {
+  border-radius: 8px;
 }
 </style>
 {% block items %}
 
 {% for item in widget.get_items %}
-  <div class="photoswipe-multi-gallery col-xs-12">
-    <figure itemprop="associatedMedia">
-      <a class="photoswipe-href-js-hide" href="{{ item.image.url }}" itemprop="contentUrl" data-size="1920x1080">
-      {% thumbnail item.image.file widget.thumb_geom format="PNG" as image %}
-      <img class="img-responsive preview-img-swipe" itemprop="thumbnail" src="{{ image.url }}" alt="" />
-      {% endthumbnail %}
-      <div class="preview-inner-swipe">
-        <!-- <h3 class="preview-title-swipe">{{ item.translation.name }}</h3> -->
-      </div>
-      </a>
-      <figcaption itemprop="caption description">{{ item.translation.name }}</figcaption>
-    </figure>
+  <div class="photoswipe-multi-gallery col-xs-12 wow fadeIn" data-wow-delay="0.1s" style="opacity: 0">
+    <div class="center-block">
+      <figure itemprop="associatedMedia">
+        <a class="photoswipe-href-js-hide" href="{{ item.image.url }}" itemprop="contentUrl" data-size="1920x1080">
+        {% thumbnail item.image.file widget.thumb_geom format="PNG" as image %}
+        <img class="img-responsive border-radius preview-img-swipe" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+        {% endthumbnail %}
+        <div class="preview-inner-swipe">
+          <h3 class="preview-title-swipe">+ Galerie</h3>
+        </div>
+        </a>
+        <figcaption itemprop="caption description">{{ item.translation.name }}</figcaption>
+      </figure>
     {% for sublink in item.relationship.category.link_set.all %}
-    <figure style="display: none" itemprop="associatedMedia">
-      <a class="photoswipe-href-js-hide" href="{{ sublink.image.url }}" itemprop="contentUrl" data-size="1920x1080">
-      {% thumbnail sublink.image.file widget.thumb_geom format="PNG" as image %}
-      <img class="img-responsive" itemprop="thumbnail" src="{{ image.url }}" alt="" />
-      {% endthumbnail %}
-      </a>
-      <figcaption itemprop="caption description">{{ sublink.translation.name }}</figcaption>
-    </figure>
+      <figure style="display: none" itemprop="associatedMedia">
+        <a class="photoswipe-href-js-hide" href="{{ sublink.image.url }}" itemprop="contentUrl" data-size="1920x1080">
+        {% thumbnail sublink.image.file widget.thumb_geom format="PNG" as image %}
+        <img class="img-responsive border-radius" itemprop="thumbnail" src="{{ image.url }}" alt="" />
+        {% endthumbnail %}
+        </a>
+        <figcaption itemprop="caption description">{{ sublink.translation.name }}</figcaption>
+      </figure>
+    </div>
     {% endfor %}
   </div>
   {% endfor %}
 {% endblock %}
-
+<script type="text/javascript">
+setTimeout(function(){
+  $('.photoswipe-multi-gallery.col-xs-12').css('opacity', '1');
+  var preview_img_width = $(".preview-img-swipe").width();
+  $(".preview-inner-swipe").css("width", preview_img_width);
+  $(window).resize(function() {
+    var preview_img_width = $(".preview-img-swipe").width();
+    $(".preview-inner-swipe").css("width", preview_img_width);
+  });
+}, 400);
+</script>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
