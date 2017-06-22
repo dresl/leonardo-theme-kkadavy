@@ -41,6 +41,10 @@ window.setInterval(function(){
     }
 }, 500);
 
+$(function() {
+    $(".kontakt-form input").prop('required',true);
+});
+
 // vide.js
 
 // $(document).ready(function () {

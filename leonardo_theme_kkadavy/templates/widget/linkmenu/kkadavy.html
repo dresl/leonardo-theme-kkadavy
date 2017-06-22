@@ -59,7 +59,7 @@ figure.effect-marley h2 {
         <img class="img-responsive preview-img-swipe" itemprop="thumbnail" src="{{ image.url }}" alt="" />
         {% endthumbnail %}
         <figcaption>
-            <h2>{{ item.translation.name }}</h2>
+            <h2>{{ item.translation.name|safe }}</h2>
             <a href="{{ item.web_address }}">View more</a>
         </figcaption>
     </figure>

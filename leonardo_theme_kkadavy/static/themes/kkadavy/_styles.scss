@@ -24,14 +24,6 @@ a:hover, a:focus {
     padding-right: 0;
 }
 
-header {
-    display: table;
-    width: 100%;
-    background: #ffffff;
-    background-size: cover;
-    text-align: center;
-}
-
 #background-video {
     position: fixed;
 }
@@ -48,7 +40,6 @@ header {
 
 #main_col_12 {
     padding: 0;
-    background-color: #ffffff;
 }
 
 .blue-bg-pattern {
@@ -108,16 +99,6 @@ header {
 
 .toolbar-heading {
     width: 80%;
-}
-
-header {
-    background-image: url("/static/img/uvodni_fotka.jpg");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-    .pageiconlink-content-default {
-        padding-top: 45px;
-    }
 }
 
 // nav
@@ -186,11 +167,8 @@ header {
 }
 
 #o-firme {
-    background: url("/static/img/blue_bg.jpg");
-    background-size: cover;
-    background-position: center;
     padding: 78px 0px 0px 0px;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
     form {
         .form-group {
@@ -246,9 +224,6 @@ header {
             height: 170px!important;
             resize: none;
         }
-    }
-    .modal-content.ui-draggable {
-        background: url("/static/img/blue_bg.jpg");
     }
     .modal-header {
         border-bottom: 0px;
@@ -342,7 +317,7 @@ header {
     border-top: none;
 }
 
-// modal form module order
+// end modal form module order
 
 #knedliky {
     padding-bottom: 50px;
@@ -359,7 +334,6 @@ header {
     display: table;
     width: 100%;
     .container-fluid {
-        display: table-cell;
         padding-top: 50px;
         vertical-align: middle;
         height: calc(71vh - -160px);
@@ -379,14 +353,14 @@ header {
     }
 }
 
-.three_bg {
-    background: url('/static/img/bg_full_page.jpg');
+.main_container_with_bg {
+    background: url('/static/img/full_page_bg.jpg');
     background-size: 100%;
 }
 
 /*
 div#canvas {
-    background: url(/static/img/bg_full_page.jpg);
+    background: url(/static/img/full_page_bg.jpg);
     background-size: 100%;
 }
 */
@@ -507,36 +481,45 @@ div#canvas {
 
 // header nav
 
-header .pageiconlink-base-default {
-    display: none;
+header {
+    background-image: url("/static/img/uvodni_fotka.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    display: table;
+    width: 100%;
+    text-align: center;
+    .pageiconlink-content-default {
+        padding-top: 45px;
+    }
+    .pageiconlink-base-default {
+        display: none;
+    }
+    .nav.navbar-nav li {
+        width: 125px;
+        margin-top: -1px;
+        a {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            font-size: 17px;
+            padding-bottom: 0;
+            padding-top: 30px;
+            &:hover {
+                background-color: transparent;
+                color: #f7c247;
+            }
+        }
+    }
+    
 }
 
 .responsive_menu {
     @extend .container;
 }
 
-
 .navbar-collapse.collapse.in ul li a {
     padding: 16px;
-}
-
-header .nav.navbar-nav li a:hover {
-    background-color: transparent;
-    color: #f7c247;
-}
-
-header .nav.navbar-nav li {
-    width: 125px;
-    margin-top: -1px;
-}
-
-header .nav.navbar-nav li a {
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease;
-    font-size: 17px;
-    padding-bottom: 0;
-    padding-top: 30px;
 }
 
 // footer
@@ -544,8 +527,9 @@ header .nav.navbar-nav li a {
 footer {
     display: inline-block;
     width: 100%;
-    color: white;
+    color: #ffffff;
     background: url("/static/img/blue_bg.jpg");
+    background-size: cover;
     padding: 20px 10px;
     margin-bottom: -5px;
     .container-fluid div.leonardo-region {
@@ -631,9 +615,6 @@ footer {
         height: 170px!important;
         resize: none;
     }
-    .modal-content.ui-draggable {
-        background: url("/static/img/blue_bg.jpg");
-    }
     .modal-header {
         border-bottom: 0px;
         .modal-title {
@@ -663,6 +644,7 @@ footer {
 // smartphones view
 @media only screen and (max-width: 760px) {
     header {
+        background-image: url("/static/img/uvodni_fotka_mobile.jpg")!important;
         .treenavigation-content-kkadavy_menu {
             display: none;
             .navbar-collapse.collapse {
@@ -671,9 +653,6 @@ footer {
         }
         .pageiconlink-base-default {
             display: block;
-        }
-        .toolbar-image {
-            width: 80%;
         }
     }
     .responsive_menu {
@@ -695,6 +674,10 @@ footer {
     .ih-item.circle {
         margin-left: 0%!important;
     }
+    footer {
+        background-image: none!important;
+        background-color: #06273e;
+    }
     .linkmenu-content-recepty .col-sm-4 {
         top: 125px;
     }
@@ -707,6 +690,9 @@ footer {
                 width:  100%;
             }
         }
+    }
+    figure.effect-marley h2 {
+        top: 8px!important;
     }
 }
 
