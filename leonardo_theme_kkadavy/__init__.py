@@ -4,7 +4,6 @@ LEONARDO_APPS = [
 ]
 
 LEONARDO_CSS_FILES = [
-    'css/ihover.css',
     'css/magazine.css',
     'css/hover_effects.css',
     'css/default-skin.min.css',

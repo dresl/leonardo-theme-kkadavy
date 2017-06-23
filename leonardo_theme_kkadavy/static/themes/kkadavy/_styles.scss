@@ -170,6 +170,12 @@ a:hover, a:focus {
     padding: 78px 0px 0px 0px;
     color: #ffffff;
     font-weight: bold;
+    .spokojeny-zakaznik-o-firme {
+        width: 50%;
+    }
+    .o-firme-text-reversed {
+        display: block;
+    }
     form {
         .form-group {
             margin-bottom: 9px;
@@ -321,7 +327,7 @@ a:hover, a:focus {
 
 #knedliky {
     padding-bottom: 50px;
-    padding-top: 200px;
+    padding-top: 100px;
     display: table;
     width: 100%;
     .container-fluid {
@@ -334,7 +340,6 @@ a:hover, a:focus {
     display: table;
     width: 100%;
     .container-fluid {
-        padding-top: 50px;
         vertical-align: middle;
         height: calc(71vh - -160px);
         .leonardo-region {
@@ -635,6 +640,9 @@ footer {
             font-size: 20px;
         }
     }
+    .knedliky-footer-badge {
+        display: block;
+    }
 }
 
 .thumb a img {
@@ -653,6 +661,13 @@ footer {
         }
         .pageiconlink-base-default {
             display: block;
+        }
+        .toolbar-image {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        .toolbar-heading {
+            width: 100%;
         }
     }
     .responsive_menu {
@@ -691,8 +706,18 @@ footer {
             }
         }
     }
+    .main_container_with_bg {
+        background: url('/static/img/full_bg_mobile.jpg')!important;
+        background-repeat: repeat;
+    }
     figure.effect-marley h2 {
         top: 8px!important;
+    }
+    .spokojeny-zakaznik-o-firme {
+        width: 100%!important;
+    }
+    .o-firme-text-reversed, .knedliky-footer-badge {
+        display: none!important;
     }
 }
 

@@ -1,0 +1,188 @@
+{% extends widget.get_base_template %}
+
+{% load i18n thumbnail %}
+
+{% block content %}
+<style type="text/css">
+.photoswipe-multi-gallery {
+    margin-bottom: 12px;
+}
+
+.photoswipe-multi-gallery figure {
+  display: block;
+  float: left;
+  padding: 0;
+  width: 100%;
+}
+
+.photoswipe-multi-gallery figcaption {
+  display: none;
+}
+
+.pswp__button--arrow--left:before {
+  background: none;
+  font-family: fontawesome;
+  content: '\f053';
+  font-size: 50px;
+  left: 24px;
+}
+
+.pswp__button--arrow--right:before {
+  background: none;
+  font-family: fontawesome;
+  content: '\f054';
+  font-size: 50px;
+  left: 0;
+}
+
+.pswp__caption__center {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 10px;
+  line-height: 20px;
+  color: #CCC;
+  letter-spacing: 0.6px;
+}
+
+.pswp__bg {
+  background: rgba(0, 0, 0, 0.67);
+}
+
+.pswp--zoom-allowed .pswp__img {
+  cursor: default !important;
+}
+
+.preview-inner-swipe {
+  text-align: center;
+  background-color: rgba(1, 1, 1, 0.6);
+  position: absolute;
+  z-index: 2;
+  float: left;
+  bottom: 0px;
+}
+
+.preview-title-swipe {
+  font-size: 19px;
+  color: white;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+img.border-radius {
+  width: 100%;
+  height: auto;
+  transition: all 0.25s ease;
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+img.border-radius:hover {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+img.border-radius {
+  border-radius: 8px;
+}
+</style>
+
+<div class="photoswipe-multi-gallery col-xs-12 wow fadeIn" data-wow-delay="0.1s" style="opacity: 0">
+{% for item in widget.folder.media_file_files.all %}
+    {% if forloop.first %}
+    <figure itemprop="associatedMedia">
+        <a class="photoswipe-href-js-hide" href="/media/{{ item.file }}" itemprop="contentUrl" data-size="1920x1080">
+        {% thumbnail item.file widget.get_size format="PNG" as thumb %}
+        <img class="img-responsive border-radius preview-img-swipe" itemprop="thumbnail" src="{{ thumb.url }}" alt="" />
+        {% endthumbnail %}
+        <div class="preview-inner-swipe">
+          <h3 class="preview-title-swipe">+ Galerie</h3>
+        </div>
+        </a>
+        <figcaption itemprop="caption description">{{ item }}</figcaption>
+    </figure>
+    {% else %}
+    <figure style="display: none" itemprop="associatedMedia">
+        <a class="photoswipe-href-js-hide" href="/media/{{ item.file }}" itemprop="contentUrl" data-size="1920x1080">
+        {% thumbnail item.file widget.get_size format="PNG" as thumb %}
+        <img class="img-responsive border-radius" itemprop="thumbnail" src="{{ thumb.url }}" alt="" />
+        {% endthumbnail %}
+        </a>
+        <figcaption itemprop="caption description">{{ item }}</figcaption>
+    </figure>
+    {% endif %}
+{% endfor %}
+</div>
+
+<script type="text/javascript">
+setTimeout(function(){
+  $('.photoswipe-multi-gallery.col-xs-12').css('opacity', '1');
+  var preview_img_width = $(".preview-img-swipe").width();
+  $(".preview-inner-swipe").css("width", preview_img_width);
+  $(window).resize(function() {
+    var preview_img_width = $(".preview-img-swipe").width();
+    $(".preview-inner-swipe").css("width", preview_img_width);
+  });
+}, 400);
+</script>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+  <!-- Background of PhotoSwipe. 
+       It's a separate element, as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+
+    <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+    <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+    </div>
+
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+
+      <div class="pswp__top-bar">
+
+        <!--  Controls are self-explanatory. Order can be changed. -->
+
+        <div class="pswp__counter"></div>
+
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader-active when preloader is running -->
+        <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div> 
+      </div>
+
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+
+      <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
