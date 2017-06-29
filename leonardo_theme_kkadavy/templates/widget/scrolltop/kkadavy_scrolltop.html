@@ -1,0 +1,62 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+<style type="text/css">
+.topButton {
+    color: #ffffff;
+    font-size: 40px;
+    position: fixed;
+    overflow: hidden;
+    text-align: center;
+    z-index: 500;
+    width: 40px!important;
+    height: 40px;
+    line-height: 43px;
+    right: 13px;
+    bottom: 60px;
+    border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+    visibility: visible;
+    box-shadow: none;
+    background: transparent;
+}
+.topButton:hover {
+	background-color: transparent;
+	color: #CCCCCC!important;
+}
+</style>
+<a href="#main_content" class="topButtonNone"><div><i class="fa fa-chevron-up" aria-hidden="true"></i></div></a>
+<script type="text/javascript">
+function textClear(element)
+		{
+		  if ( element.value != '' )
+		  {
+		      element.value = '';
+		  }
+		}
+		$(function() {
+		  $('a[href=#main_content]').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, {{ widget.duration }});
+		        return false;
+		      }
+		    }
+		  });
+		});
+
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 40) {
+        $(".topButtonNone").addClass("topButton");
+    } else {
+        $(".topButtonNone").removeClass("topButton");
+    }
+});
+</script>
+{% endblock %}

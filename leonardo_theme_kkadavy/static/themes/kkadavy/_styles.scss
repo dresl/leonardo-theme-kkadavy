@@ -77,19 +77,12 @@ a:hover, a:focus {
     transition: all 0.3s ease;
     font-family: Arial;
     font-weight: bold;
-    color: white;
-}
-
-.order-list-btn:hover {
-    background-color: #639221;
-    border-color: #8cc63c;
-    color: white;
-}
-
-.order-list-btn:focus {
-    background-color: #8cc63c;
-    border-color: #8cc63c;
-    color: white;
+    color: #ffffff;
+    &:hover, &:focus {
+        background-color: #639221;
+        border-color: #8cc63c;
+        color: #ffffff;
+    }
 }
 
 .menu-logo {
