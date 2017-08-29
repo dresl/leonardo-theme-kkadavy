@@ -3,7 +3,7 @@
 
 {% block content %}
 {% block items %}
-<div id="canvas" style="margin-top: 300px;">
+<div id="canvas" style="margin-top: 300px;padding-bottom: 120px">
 
 <!-- <div class="zoom-icon zoom-icon-in"></div> -->
 
@@ -37,7 +37,7 @@
                 <li>
                 {% else %}
                 <img width="76" height="100" class="page-{{ item.ordering }}" src="{{ item.image.url }}">
-                <span style="color: white;{% if not forloop.last %}margin-left: -7px{% endif%}">{{ item.ordering }}{% if item.ordering != 1 and not forloop.last %} - {% endif %}</span>
+                <span style="color: white;{% if not forloop.last and item.ordering < 10 %}margin-left: -7px{% else %}margin-left: -15px{% endif%}">{{ item.ordering }}{% if item.ordering != 1 and not forloop.last %} - {% endif %}</span>
                 {% endif %}
             {% endfor %}
             </li>

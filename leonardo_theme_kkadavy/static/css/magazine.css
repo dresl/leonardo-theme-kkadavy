@@ -249,7 +249,7 @@
 .thumbnails li{
 	list-style:none;
 	display:inline-block;
-	margin:0 5px;
+	margin: 26px 5px;
 	-webkit-box-shadow:0 0 10px #ccc;
 	-moz-box-shadow:0 0 10px #ccc;
 	-ms-box-shadow:0 0 10px #ccc;
