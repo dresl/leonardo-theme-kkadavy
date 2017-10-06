@@ -642,8 +642,12 @@ footer {
     width: 35px;
 }
 
+.modal-lg {
+    width: 1000px;
+}
+
 // smartphones view
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 986px) {
     header {
         background-image: url("/static/img/uvodni_fotka_mobile.jpg")!important;
         .treenavigation-content-kkadavy_menu {
@@ -711,6 +715,9 @@ footer {
     }
     .o-firme-text-reversed, .knedliky-footer-badge {
         display: none!important;
+    }
+    .modal-lg {
+        width: 100%;
     }
 }
 
