@@ -93,7 +93,9 @@ img.border-radius {
 {% for item in widget.folder.media_file_files.all %}
     {% if forloop.first %}
     <figure itemprop="associatedMedia">
-        <a class="photoswipe-href-js-hide" href="/media/{{ item.file }}" itemprop="contentUrl" data-size="1920x1080">
+        {% thumbnail item.file "1920x1080" format="PNG" as thumbMax %}
+        <a class="photoswipe-href-js-hide" href="{{ thumbMax.url }}" itemprop="contentUrl" data-size="1920x1080">
+        {% endthumbnail %}
         {% thumbnail item.file widget.get_size format="PNG" as thumb %}
         <img class="img-responsive border-radius preview-img-swipe" itemprop="thumbnail" src="{{ thumb.url }}" alt="" />
         {% endthumbnail %}
@@ -105,7 +107,9 @@ img.border-radius {
     </figure>
     {% else %}
     <figure style="display: none" itemprop="associatedMedia">
-        <a class="photoswipe-href-js-hide" href="/media/{{ item.file }}" itemprop="contentUrl" data-size="1920x1080">
+        {% thumbnail item.file "1920x1080" format="PNG" as thumbMax %}
+        <a class="photoswipe-href-js-hide" href="{{ thumbMax.url }}" itemprop="contentUrl" data-size="1920x1080">
+        {% endthumbnail %}
         {% thumbnail item.file widget.get_size format="PNG" as thumb %}
         <img class="img-responsive border-radius" itemprop="thumbnail" src="{{ thumb.url }}" alt="" />
         {% endthumbnail %}
