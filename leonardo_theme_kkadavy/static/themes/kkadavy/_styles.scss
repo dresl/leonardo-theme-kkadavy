@@ -24,6 +24,16 @@ a:hover, a:focus {
     padding-right: 0;
 }
 
+.leonardo-region .htmltext-base-default a:hover {
+    text-decoration: none;
+}
+
+.leonardo-region .htmltext-base-default a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
 #background-video {
     position: fixed;
 }

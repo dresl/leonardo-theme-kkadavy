@@ -1,0 +1,36 @@
+{% extends widget.get_base_template %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<style type="text/css">
+p.gdpr-form {
+    color: #fff;
+    padding-top: 10px;
+    width: 70%;
+    margin: 0 auto;
+}
+p.gdpr-form a {
+    text-decoration: underline;
+    color: #fff;
+    font-weight: bold;
+}
+p.gdpr-form a:hover {
+    text-decoration: none;
+}
+</style>
+
+<div id="kontakt-form{{ widget.id }}" class="{{ widget.formclass }} footer-kontakt-form">
+{% if form %}
+{% crispy form %}
+{% else %}
+{{ message|safe }}
+{% endif %}
+</div>
+
+
+
+<p class="gdpr-form">Kliknutím na tlačítko "Potvrdit" dáváte souhlas k odeslání tohoto formuláře se všemi údaji. Více informací naleznete na stránce <a href="/informace-o-webu/#/gdpr-info">Informace o webu</a></p>
+
+{% endblock %}
